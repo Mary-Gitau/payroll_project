@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
 </head>
 
 <body>
@@ -14,20 +16,22 @@
 
             <img src="payroll-logo.jpeg">
         </div>
+    </div>
+    <div class="container">
         <h1> NET PAY CALCULATOR</h1>
         <P>Enter the gross salary below amount to calculate your net amount.</P>
 
 
-        <table class="table table-bordered border primary" style="width:800px;" border="1">
+        <table class="table table-bordered border primary" style="width:700px;" border="1" right:30px; >
             <thead>
 
                 <form action="" form id="myform">
-                    <b> <label for="basic_salary">Basic Salary</label><button>Ksh</button></b>
-                    <input type="number" id="basic_salary">
+                    <b> <label for="basic_salary">Basic Salary:</label><button>Ksh</button></b>
+                    <input type="number" id="basic_salary" placeholder="Enter your basic salary">
 
 
-                    <b> <label for="benefits">Benefits</label><button>Ksh</button></b>
-                    <input type="number" id="benefits">
+                    <b> <label for="benefits">Benefits:</label><button>Ksh</button></b>
+                    <input type="number" id="benefits" placeholder="Enter your benefits">
 
 
                     <button type="CALCULATE">CALCULATE</button><br>
@@ -52,7 +56,7 @@
                     <td id="NHDF"></td>
                 </tr>
                 <tr>
-                    <td>Final_Payeee</td>
+                    <td>PAYEE</td>
                     <td id="Final_Payee"></td>
                 </tr>
                 <tr>
@@ -61,13 +65,13 @@
                 </tr>
 
                 <tr>
-                    <td>Net_Pay</td>
+                    <td>Net Pay</td>
                     <td id="Net_pay"></td>
                 </tr>
 
                 <tr>
-                    <td>taxable_income</td>
-                    <td id="taxable_income"></td>
+                    <td>Taxable income</td>
+                    <td id="Taxable_income"></td>
                 </tr>
             </tbody>
 

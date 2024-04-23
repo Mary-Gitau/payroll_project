@@ -1,5 +1,5 @@
 #calculate {
-  background-color:burlywood;
+  background-color:blue;
   }
   body{
       background-image:url('money-2724241_1280.jpeg') ;
@@ -8,7 +8,7 @@
   }
   h1{
     color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
   }
   p{
     color:black;font-size:x-large;
@@ -17,18 +17,29 @@
   }
    
   .table{
-    width: 60%;
+    width: 50%;
     margin-top: 50px;
     right: 10px;
+    border-style:hidden;
+    height:70px;
+    justify-content: center;
+    box-shadow: 10px 10px 10px 10px;
+    
   }
   th{
-    color: goldenrod;
+    color: brown;
+    text-align: center;
+    font-size: larger;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
   }
     
     
-  .container{text-align: center;}
-  #b_salary{margin-right: 50px;}
-  #benefits{margin-right: 30px;}
+  td{
+    text-align: center;
+    font-size:medium;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
   label{
     color: black;font-weight: bolder;}
   button{

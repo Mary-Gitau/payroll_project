@@ -1,40 +1,40 @@
 
-let form=document.getElementById("myform")
+let form = document.getElementById("myform")
 
 form.addEventListener('submit', function (e) {
     // prevent the page from refreshing
     e.preventDefault()
 
-    
-    let basic_salary=Number(document.getElementById("basic_salary").value)
-    
-    let benefits=Number(document.getElementById("benefits").value)
+
+    let basic_salary = Number(document.getElementById("basic_salary").value)
+
+    let benefits = Number(document.getElementById("benefits").value)
 
     let gross_salary = calc_gross_salary(basic_salary, benefits)
-    document.getElementById("gross_salary").innerHTML=gross_salary
+    document.getElementById("gross_salary").innerHTML = gross_salary
 
     let NHIF = cal_nhif(gross_salary)
-    document.getElementById("NHIF").innerHTML=NHIF
+    document.getElementById("NHIF").innerHTML = NHIF
 
 
     let NSSF = calc_nssf(gross_salary)
-    document.getElementById("NSSF").innerHTML=NSSF
+    document.getElementById("NSSF").innerHTML = NSSF
 
     let NHDF = cal_nhdf(gross_salary)
-    document.getElementById("NHDF").innerHTML=NHDF
+    document.getElementById("NHDF").innerHTML = NHDF
 
-    let taxable_income = calc_taxable_income(gross_salary, NHDF, NSSF)
+    let Taxable_income = calc_taxable_income(gross_salary, NHDF, NSSF)
     console.log("taxable_income")
-    document.getElementById("taxable_income").innerHTML=taxable_income
+    document.getElementById("Taxable_income").innerHTML = Taxable_income
 
-    let Final_Payee = calc_Final_payee(taxable_income)
-    document.getElementById("Final_Payee").innerHTML=Final_Payee
+    let Final_Payee = calc_Final_payee(Taxable_income)
+    document.getElementById("Final_Payee").innerHTML = Final_Payee
 
-    let Net_pay= calc_net_pay(gross_salary, NHIF, NHDF, NSSF, Final_Payee)
-    document.getElementById("Net_pay").innerHTML=Net_pay
+    let Net_pay = calc_net_pay(gross_salary, NHIF, NHDF, NSSF, Final_Payee)
+    document.getElementById("Net_pay").innerHTML = Net_pay
 
 
-    
+
 
 
 
@@ -170,12 +170,12 @@ console.log("NHDF", NHDF)
 // i.e taxable_income = gross salary - (NSSF + NHDF)
 
 function calc_taxable_income(a, b, c) {
-    let taxable_income = a - (b + c)
-    return taxable_income
+    let Taxable_income = a - (b + c)
+    return Taxable_income
 
 }
-let taxable_income = calc_taxable_income(gross_salary, NHDF, NSSF)
-console.log("Taxable Income", taxable_income)
+let Taxable_income = calc_taxable_income(gross_salary, NHDF, NSSF)
+console.log("Taxable Income", Taxable_income)
 
 
 // number 19
@@ -186,30 +186,30 @@ console.log("Taxable Income", taxable_income)
 
 
 function calc_Final_payee(tax) {
-    let Final_Payee=0
-    
+    let Final_Payee = 0
+
     let relief = 2400
 
     if (tax >= 0 && tax <= 24000) {
         Final_Payee = 0
     }
     else if (tax >= 24000 && tax <= 32333) {
-        Final_Payee = (24000 * 0.01) + (0.25 * (tax - 24000)) - relief
+        Final_Payee = (0.25 * (tax - 24000))
     }
     else if (tax >= 32333 && tax <= 500000) {
-        Final_Payee = (24000 * 0.01) + (0.25 * 8333) + (0.3 * (tax - 32333)) - relief
+        Final_Payee = (0.25 * 8333) + (0.3 * (tax - 32333))
     }
     else if (tax <= 500000 && tax >= 800000) {
-        Final_Payee = (24000 * 0.01) + (0.25 * 8333) + (0.3 * (tax - 467667)) + ((tax - 500000) * 0.325) - relief
+        Final_Payee = (0.25 * 8333) + (0.3 * (tax - 467667)) + ((tax - 500000) * 0.325)
     }
     else {
         // (tax <= 800000 && tax >= 1600000){
-        Final_Payee = (24000 * 0.01) + (0.25 * 8333) + (0.3*467667) + (300000 * 0.325) + (0.35 * (tax - 800000)) - relief
+        Final_Payee =(0.25 * 8333) + (0.3 * 467667) + (300000 * 0.325) + (0.35 * (tax - 800000)) 
     }
 
     return Final_Payee
 }
-let Final_Payee= calc_Final_payee(taxable_income)
+let Final_Payee = calc_Final_payee(Taxable_income)
 console.log("payee", Final_Payee)
 
 // number 20
@@ -222,7 +222,7 @@ function calc_net_pay(a, b, c, d, e) {
 
     return net_pay
 
-    
+
 }
 let Net_pay = calc_net_pay(gross_salary, NHIF, NHDF, NSSF, Final_Payee)
 console.log("Net pay", Net_pay)
