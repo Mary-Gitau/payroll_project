@@ -1,0 +1,36 @@
+#calculate {
+  background-color:burlywood;
+  }
+  body{
+      background-image:url('money-2724241_1280.jpeg') ;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  h1{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  p{
+    color:black;font-size:x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  }
+   
+  .table{
+    width: 60%;
+    margin-top: 50px;
+    right: 10px;
+  }
+  th{
+    color: goldenrod;
+  }
+    
+    
+  .container{text-align: center;}
+  #b_salary{margin-right: 50px;}
+  #benefits{margin-right: 30px;}
+  label{
+    color: black;font-weight: bolder;}
+  button{
+    background-color:skyblue;
+  }
